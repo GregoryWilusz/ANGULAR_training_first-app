@@ -18,7 +18,13 @@
 <!--<p>{{ allowNewServer }}</p>-->
 <app-server *ngFor="let server of servers"></app-server>
 
-
+<!--Assignment 3-->
+<button
+  class="btn btn-primary"
+  (click)="onToggle()">Display Details</button>
+<p *ngIf="displayContent">Secret password = tuna</p>
+<p *ngFor="let log of logs; let i = index"
+   [ngClass]="{'laterClicks': i >= 4}">{{ log }}</p>
 
 <!--Assignment 2-->
 
