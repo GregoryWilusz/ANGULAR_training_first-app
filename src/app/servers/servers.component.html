@@ -17,7 +17,7 @@
 <!--<p>{{ allowNewServer }}</p>-->
 <app-server></app-server>
 <app-server></app-server>
-<label>Provide a user name
+<label>Provide a username
   <input
     type="text"
     class="form-control"
@@ -26,5 +26,5 @@
 <p>{{ userName }}</p>
 <button
   class="btn btn-danger"
-  [disabled]="!userName.length > 0"
-  (click)="deleteUserName()">Delete the name</button>
+  [disabled]="userName.length === 0"
+  (click)="userName = ''">Delete the username</button>
