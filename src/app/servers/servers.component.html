@@ -12,19 +12,24 @@
   class="btn btn-primary"
   [disabled]="!allowNewServer"
   (click)="onCreateServer()">Add server</button>
-<p>{{ serverCreationStatus }}</p>
+<p *ngIf="serverCreated">Server was created, server name is {{ serverName }}.</p>
+<!--<p>{{ serverCreationStatus }}</p>-->
 <!--<p [innerText]="allowNewServer"></p>-->
 <!--<p>{{ allowNewServer }}</p>-->
-<app-server></app-server>
-<app-server></app-server>
-<label>Provide a username
-  <input
-    type="text"
-    class="form-control"
-    [(ngModel)]="userName">
-</label>
-<p>{{ userName }}</p>
-<button
-  class="btn btn-danger"
-  [disabled]="userName.length === 0"
-  (click)="userName = ''">Delete the username</button>
+<app-server *ngFor="let server of servers"></app-server>
+
+
+
+<!--Assignment 2-->
+
+<!--<label>Provide a username-->
+  <!--<input-->
+    <!--type="text"-->
+    <!--class="form-control"-->
+    <!--[(ngModel)]="userName">-->
+<!--</label>-->
+<!--<p>{{ userName }}</p>-->
+<!--<button-->
+  <!--class="btn btn-danger"-->
+  <!--[disabled]="userName.length === 0"-->
+  <!--(click)="userName = ''">Delete the username</button>-->
